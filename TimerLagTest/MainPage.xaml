@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TimerLagTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:timerLagTest="clr-namespace:TimerLagTest">
+    <Grid
+        x:Name="MainAppViewGrid"
+        Margin="0,0,0,20"
+        RowDefinitions="auto,auto,auto,auto,*">
+
+        <HorizontalStackLayout Grid.Row="0">
+            <Button
+                x:Name="StartButton"
+                Margin="10"
+                BackgroundColor="Green"
+                Clicked="StartButton_OnClicked"
+                HorizontalOptions="Start"
+                Text="Start Timer"
+                TextColor="White" />
+
+            <Button
+                x:Name="StopButton"
+                Margin="10"
+                BackgroundColor="Red"
+                Clicked="StopButton_OnClicked"
+                HorizontalOptions="Start"
+                Text="Stop Timer"
+                TextColor="White" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="1">
+            <Button
+                x:Name="EnableTextUpdatesButton"
+                Margin="10"
+                BackgroundColor="Green"
+                Clicked="EnableTextUpdatesButton_OnClicked"
+                FontSize="Small"
+                HorizontalOptions="Start"
+                Text="Update on"
+                TextColor="White" />
+
+            <Button
+                x:Name="DisableTextUpdatesButton"
+                Margin="10"
+                BackgroundColor="Red"
+                Clicked="DisableTextUpdatesButton_OnClicked"
+                FontSize="Small"
+                HorizontalOptions="Start"
+                Text="Update Off"
+                TextColor="White" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Start">
+            <Label
+                x:Name="TextUpdatesStatus"
+                Margin="10,0,40,10"
+                Text="Update  on" />
+
+            <Label
+                x:Name="TimerStatus"
+                Margin="10,0,20,10"
+                Text="Timer off" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Start">
+            <Label x:Name="TimerLabel" Margin="10,0,20,30" />
+            <Label x:Name="TimerLabel2" Margin="10,0,20,30" />
+            <Label x:Name="CounterLabel" Margin="10,0,20,30" />
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="4">
+            <timerLagTest:TestComponent />
+        </ScrollView>
+    </Grid>
+</ContentPage>
